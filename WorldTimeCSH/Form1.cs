@@ -12,7 +12,7 @@ namespace WorldTimeCSH
 {
     public partial class Form1 : Form
     {
-        int coefficient = 0;
+        int coefficient = -1;
 
         public Form1()
         {
@@ -21,7 +21,7 @@ namespace WorldTimeCSH
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            coefficient =(int)numericUpDown1.Value;
+            coefficient =(int)numericUpDown1.Value-1;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
