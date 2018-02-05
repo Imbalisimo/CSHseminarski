@@ -72,9 +72,9 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(57, 115);
+            this.textBox1.Location = new System.Drawing.Point(12, 115);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(178, 20);
+            this.textBox1.Size = new System.Drawing.Size(260, 20);
             this.textBox1.TabIndex = 2;
             // 
             // comboBox1
@@ -85,10 +85,11 @@
             "en-GB",
             "en-US",
             "ja-JP"});
-            this.comboBox1.Location = new System.Drawing.Point(121, 47);
+            this.comboBox1.Location = new System.Drawing.Point(130, 47);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 3;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Form1
             // 

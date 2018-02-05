@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace WorldTimeCSH
     public partial class Form1 : Form
     {
         int coefficient = -1;
+        CultureInfo cultureInfo = new CultureInfo("hr-HR");
 
         public Form1()
         {
@@ -26,11 +28,17 @@ namespace WorldTimeCSH
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            DateTime current = DateTime.Now;
+            DateTime current;
             int hourHelper = DateTime.Now.Hour;
             hourHelper += coefficient;
-            current = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, hourHelper, DateTime.Now.Minute, DateTime.Now.Second);
-            textBox1.Text = current.ToLongTimeString();
+            current = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, hourHelper, DateTime.Now.Minute, DateTime.Now.Second, cultureInfo.Calendar);
+            textBox1.Text = current.ToLongDateString()+", "+current.ToLongTimeString();
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cultureInfo = new CultureInfo(comboBox1.SelectedText);
+        }
+
     }
 }
